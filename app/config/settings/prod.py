@@ -23,7 +23,7 @@ ALLOWED_HOSTS = [
 # Application definition
 ROOT_URLCONF = "config.urls.prod"
 
-WSGI_APPLICATION = "config.wsgi.prod.application"
+ASGI_APPLICATION = "config.asgi.prod.application"
 
 
 # Database

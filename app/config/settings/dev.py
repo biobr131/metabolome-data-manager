@@ -28,7 +28,7 @@ MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware",]
 
 ROOT_URLCONF = "config.urls.dev"
 
-WSGI_APPLICATION = "config.wsgi.dev.application"
+ASGI_APPLICATION = "config.asgi.dev.application"
 
 
 # Database
