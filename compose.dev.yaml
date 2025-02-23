@@ -26,7 +26,7 @@ services:
         DIR_CONDA: "/opt/conda"
         REQ_DIR: "requirements/"
         REQ_TXT: "dev.txt"
-    command: gunicorn config.wsgi.dev:application --bind 0.0.0.0:8000
+    command: gunicorn config.asgi.dev:application --host=0.0.0.0 --port=8000 --reload
     volumes:
       - ./app:/usr/src/app
     expose:

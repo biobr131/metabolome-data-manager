@@ -7,7 +7,6 @@ Markdown
 Pygments
 django-guardian
 django-environ
-gunicorn
 django-structlog
 django-silk
 django-extensions
