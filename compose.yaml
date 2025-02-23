@@ -26,7 +26,7 @@ services:
         DIR_CONDA: "/opt/conda"
         REQ_DIR: "requirements/"
         REQ_TXT: "prod.txt"
-    command: gunicorn config.asgi.prod:application --host=0.0.0.0 --port=8000
+    command: uvicorn config.asgi.prod:application --host=0.0.0.0 --port=8000
     volumes:
       - ./app:/usr/src/app
     expose:
