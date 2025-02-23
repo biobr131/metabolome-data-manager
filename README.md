@@ -1,1 +1,1 @@
-# Django-DRF-App
+# Metabolome Data Manager
