@@ -13,6 +13,7 @@ django-silk
 django-extensions
 django-filter
 django-import-export[all]
+django-model-utils
 drf-spectacular[sidecar]
 django-auditlog
 strawberry-graphql[asgi]

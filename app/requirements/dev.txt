@@ -9,4 +9,4 @@ pytest-randomly
 pytest-cov
 factory-boy
 pytest-structlog
-sphinx
+sphinxcontrib-django
