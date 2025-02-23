@@ -15,7 +15,7 @@ services:
       - postgres-drf-nginx-network
   drf:
     platform: linux/x86_64
-    image: biobr131/django-drf
+    image: biobr131/metabolome-data-manager
     container_name: drf
     build:
       context: ./app
@@ -39,7 +39,7 @@ services:
       - postgres-drf-nginx-network
   nginx:
     platform: linux/x86_64
-    image: biobr131/django-drf-nginx
+    image: biobr131/metabolome-data-manager-nginx
     container_name: nginx
     build: ./nginx
     volumes:

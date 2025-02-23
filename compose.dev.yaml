@@ -15,7 +15,7 @@ services:
       - postgres-drf-nginx-jupyter-network
   drf:
     platform: linux/x86_64
-    image: biobr131/django-drf-dev
+    image: biobr131/metabolome-data-manager-dev
     container_name: drf
     build:
       context: ./app
@@ -39,7 +39,7 @@ services:
       - postgres-drf-nginx-jupyter-network
   nginx:
     platform: linux/x86_64
-    image: biobr131/django-drf-nginx
+    image: biobr131/metabolome-data-manager-nginx
     container_name: nginx
     build: ./nginx
     volumes:
@@ -62,7 +62,7 @@ services:
         VENV: "bioinfo"
         DIR_CONDA: "/opt/conda"
         REQ_TXT: "requirements.txt"
-    image: biobr131/django-drf-jupyter
+    image: biobr131/metabolome-data-manager-jupyter
     container_name: jupyter
     command: jupyter lab --ip=0.0.0.0 --allow-root --LabApp.token=''
     ports:
