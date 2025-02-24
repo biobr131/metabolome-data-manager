@@ -6,7 +6,7 @@ from .base import *  # noqa
 env = environ.Env()
 env.read_env(str(BASE_DIR / ".env.dev"))
 
-env_admin = environ.ENV()
+env_admin = environ.Env()
 env_admin.read_env(str(BASE_DIR / ".env.admin.dev"))
 
 
