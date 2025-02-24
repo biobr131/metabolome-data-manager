@@ -4,7 +4,10 @@ import structlog
 from .base import *  # noqa
 
 env = environ.Env()
-env.read_env(str(BASE_DIR /  "db" / ".env.dev"))
+env.read_env(str(BASE_DIR / ".env.dev"))
+
+env_admin = environ.ENV()
+env_admin.read_env(str(BASE_DIR / ".env.admin.dev"))
 
 
 # Quick-start development settings - unsuitable for production
@@ -42,6 +45,15 @@ DATABASES = {
         "HOST": env("POSTGRES_HOST", default="postgres"),
         "PORT": env("POSTGRES_PORT", default="5432"),
         "OPTIONS": {"options": f"-c search_path={env('POSTGRES_SCHEMA', default='public')}"},
+    },
+    "admin": {
+        "ENGINE": env_admin("DATABASE_ENGINE", default="django.db.backends.postgresql"),
+        "NAME": env_admin("POSTGRES_DB", default="postgres"),
+        "USER": env_admin("POSTGRES_USER"),
+        "PASSWORD": env_admin("POSTGRES_PASSWORD"),
+        "HOST": env_admin("POSTGRES_HOST", default="postgres"),
+        "PORT": env_admin("POSTGRES_PORT", default="5432"),
+        "OPTIONS": {"options": f"-c search_path={env_admin('POSTGRES_SCHEMA', default='public')}"},
     }
 }
 
